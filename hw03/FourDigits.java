@@ -22,12 +22,12 @@ public class FourDigits {
             tenThousandths;
         
         // Isolate and store individual digits as ints
-        tenths=(int)(input*10)%10; //Stores tenths place
-        hundredths=(int)(input*100)%10; //Stores hundredths place
-        thousandths=(int)(input*1000)%10; //Stores thousandths place
-        tenThousandths=(int)(input*10000)%10; //Stores ten-thousandths place
+        tenths=(int)(input*10)%10; // Stores tenths place
+        hundredths=(int)(input*100)%10; // Stores hundredths place
+        thousandths=(int)(input*1000)%10; // Stores thousandths place
+        tenThousandths=(int)(input*10000)%10; // Stores ten-thousandths place
         
-        //Print the four digits to the right of the decimal point
+        // Print the four digits to the right of the decimal point
         System.out.println("The four digits are "+tenths+hundredths+thousandths+tenThousandths); 
 
         

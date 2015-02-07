@@ -4,7 +4,8 @@
 
 import java.util.Scanner; // Allows for user inputs
 
-public class Bicycle { // Main method
+// Define class and main method
+public class Bicycle {
     public static void main(String[] args) {
         
     Scanner myScanner; // Declares an instance of the Scanner object
