@@ -1,6 +1,6 @@
 // Kathryn Kundrod
 // February 10, 2015
-// CSE2 HW3 Program 3
+// CSE2 HW3 Part 3: FourDigits
 
 import java.util.Scanner; // Allows for user inputs
 

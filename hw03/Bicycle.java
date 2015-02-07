@@ -1,6 +1,6 @@
 // Kathryn Kundrod
 // Febrary 10, 2015
-// CSE2 HW3 Program 1
+// CSE2 HW3 Part 1: Bicycle
 
 import java.util.Scanner; // Allows for user inputs
 
