@@ -11,19 +11,17 @@ public class Root { // Main method
     myScanner=new Scanner ( System.in ); // Takes input from STDIN
         
     System.out.print("Enter a double, and I print its cube root: "); // User enters a double
-    double value=myScanner.nextDouble();
+    double value=myScanner.nextDouble(); // Stores user's double as "value"
     
     double guess=value/3; // Crude guess of the cube root of the user's entered value
-    double firstImprovement=(guess*guess*guess+value)/(3*guess*guess); // Iterations of improvement on the cube root guess
-    double secondImprovement=(firstImprovement*firstImprovement*firstImprovement+value)/(3*firstImprovement*firstImprovement);
-    double thirdImprovement=(secondImprovement*secondImprovement*secondImprovement+value)/(3*secondImprovement*secondImprovement);
-    // double thirdImprovementCubed=(thirdImprovement*thirdImprovement*thirdImprovement);
-    double fourthImprovement=(thirdImprovement*thirdImprovement*thirdImprovement+value)/(3*thirdImprovement*thirdImprovement);
-    double fifthImprovement=(fourthImprovement*fourthImprovement*fourthImprovement+value)/(3*fourthImprovement*fourthImprovement);
-    double fifthImprovementCubed=fifthImprovement*fifthImprovement*fifthImprovement;
+    double firstRoot=(2*guess*guess*guess+value)/(3*guess*guess); // First improvement on the cube root guess
+    double secondRoot=(2*firstRoot*firstRoot*firstRoot+value)/(3*firstRoot*firstRoot); // Second improvement
+    double thirdRoot=(2*secondRoot*secondRoot*secondRoot+value)/(3*secondRoot*secondRoot); // Third improvement
+    double fourthRoot=(2*thirdRoot*thirdRoot*thirdRoot+value)/(3*thirdRoot*thirdRoot); // Fourth improvement
+    double fourthRootCubed=fourthRoot*fourthRoot*fourthRoot;
     
-    System.out.println("The cube root is "+fifthImprovement+": "+fifthImprovement+"*"
-        +fifthImprovement+"*"+fifthImprovement+"="+fifthImprovementCubed+".");
+    System.out.println("The cube root is "+fourthRoot+": "+fourthRoot+"*"
+        +fourthRoot+"*"+fourthRoot+"="+fourthRootCubed+".");
         
     }
 }
