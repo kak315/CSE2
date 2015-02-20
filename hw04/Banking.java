@@ -12,14 +12,9 @@ public class Banking {
         myScanner = new Scanner(System.in); // Construct scanner to take user inputs
         
         // Generate random number between 1000 and 5000
-        double thousands = (int)(Math.random()*3000); // generates thousands place to be added to 1000 but remain under 5000 if all other values were max values
-        double hundreds = (int)(Math.random()*1000); //generates hundreds place
-        double tens = (int)(Math.random()*100); //generates tens place
-        double ones = (int)(Math.random()*10); //generates ones place
-        double tenths = ((int)(Math.random()*10))/10; //generates tenths place
-        double hundredths = ((int)(Math.random()*10))/100; //generates hundredths place
+        double randomNumber = Math.random()*4000+1001;
         
-        double balance = 1000+thousands+hundreds+tens+ones+tenths+hundredths; //generates balance
+        double balance = randomNumber; //generates balance
         double deposit = 0; //initializing value
         double withdrawal =0; //initializating value
         
@@ -34,7 +29,8 @@ public class Banking {
             case 1: System.out.print("How much money would you like to deposit? "); //asks user for deposit amount
                 deposit = myScanner.nextDouble(); //stores user input for deposit amount
                 if (deposit>0) {
-                    System.out.println("Your resulting balance is $"+(balance+deposit)+"."); //prints new balance
+                    double newBalance = deposit + balance;
+                    System.out.printf("Your resulting balance is $%5.2f\n", newBalance); //prints new balance
                 }
                 else {
                     System.out.println("Entry must be a positive number."); //indicates input error
@@ -44,7 +40,7 @@ public class Banking {
                 withdrawal = myScanner.nextDouble(); //stores user input for withdrawal amount
                 if (withdrawal>0) {
                     if (withdrawal <= balance){
-                    System.out.println("Your resulting balance is $"+(balance-deposit)+"."); //prints new balance
+                    System.out.printf("Your resulting balance is $%4.2f\n",balance-withdrawal); //prints new balance
                     }
                     else {
                         System.out.println("Withdrawal cannot exceed balance.");
@@ -54,7 +50,7 @@ public class Banking {
                     System.out.println("Entry must be a positive number."); //indicates input error
                 }
                 break;
-            case 3: System.out.println("Your balance is $"+balance+".");
+            case 3: System.out.printf("Your balance is $%4.2f\n",balance);
                 break;
             default: System.out.println("Error: invalid entry");
                 return;
