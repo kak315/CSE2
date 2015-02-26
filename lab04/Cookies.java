@@ -66,8 +66,8 @@ public class Cookies {
                         
                     } //Ends if statement checking for valid int for number of cookies
                     else { // Terminates program if input was not a valid int
-                    System.out.println("You did not enter a valid int.");
-                    return;
+                        System.out.println("You did not enter a valid int.");
+                        return;
                     }
         
                 } //Ends if statement checking for positive value for number of people
