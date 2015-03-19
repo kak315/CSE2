@@ -84,39 +84,30 @@ public class HW8{ //creates class
     public static String getInput(Scanner scan, String AaEe, int trial){
         String inputAaEe=scan.next();
         String A="A", a="a", E="E", e="e"; //defines possible acceptable inputs as strings
+        int trial2=0;
+        while (trial2<10){
             if (inputAaEe.equals(A)||inputAaEe.equals(a)){ //if input is A or a
-                int trial2=0; //starts counter at 0
-                while (trial2<10){ //user stays in this loop until 10 critical hits are obtained
+                //int trial2=0; //starts counter at 0
+                //while (trial2<10){ //user stays in this loop until 10 critical hits are obtained
                     int randomNumber =(int)(Math.random()*2);//generates either a zero or one and stores it as randomNumber
                     if (randomNumber==0){ //if a zero was generated,
                         System.out.println("Critical miss!"); // user is notified of a critical miss
-                        System.out.println("Attack again by pressing 'A' or 'a'. Anything else will exit:");
-                        String nextAttack=scan.next();
-                        if (nextAttack.equals(a)||nextAttack.equals(A)){
-                        }
-                        else {
-                            System.out.println("Invalid input. Goodbye.");
-                            System.exit(0);
-                        }
+                        System.out.println("Enter 'A' or 'a' to Attack, 'E' or 'E' to Escape, ANYTHING else is to YIELD");
+                        scan.next();
                     } //ends if statement for 0 value
                     else if (randomNumber==1){ // if a one was generated,
                         System.out.println("Critical hit!"); //user is notified of a critical hit
                         trial2++; //increments counter
-                        System.out.println("Attack again by pressing 'A' or 'a'. Anything else will exit:");
-                        String nextAttack2=scan.next();
-                        if (nextAttack2.equals(a)||nextAttack2.equals(A)){
-                        }
-                        else {
-                            System.out.println("Invalid input. Goodbye.");
-                            System.exit(0);
+                        if (trial2<10){
+                        System.out.println("Enter 'A' or 'a' to Attack, 'E' or 'E' to Escape, ANYTHING else is to YIELD");
+                        scan.next();
                         }
                     } //ends else if statement for a 1 value
-                } //ends while statement
-            } //ends if statement
+                } //ends if statement
             
             else if (inputAaEe.equals(E)||inputAaEe.equals(e)){ //if input is A or a
-            int controlEe=0;//controls for the "Ee" step
-            while (controlEe<1){ //runs until 10 is the random number generated at the "Ee" step
+            //int controlEe=0;//controls for the "Ee" step
+            //while (controlEe<1){ //runs until 10 is the random number generated at the "Ee" step
                 int randomNumber2=(int)(Math.random()*10)+1;  //generates a random number between 1 and 10
                 if (randomNumber2<10){ //if 10 was not generated,
                     System.out.println("Did not escape!"); // user is notified that they didn't escape
@@ -125,14 +116,16 @@ public class HW8{ //creates class
                 } //ends if statement for <10 value
                 else if (randomNumber2==10){ // if a one was generated,
                     System.out.println("You escaped!"); //user is notified they escaped
-                    controlEe++; //increments control counter and exits controlling while loop
+                    //controlEe++; //increments control counter and exits controlling while loop
+                    break;
                 } //ends else if statement for 10 value
-            }//ends while statement
+            //}//ends while statement
             } //ends if statement statement for E or e entry
             
             else {
                 System.out.println("Executed by the GIANT! Game Over!"); //for invalid input
             } //ends else statement
+        } //ends while statement
         return "AaEe";
     }//ends getInput method
     
