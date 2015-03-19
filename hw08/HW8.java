@@ -87,8 +87,6 @@ public class HW8{ //creates class
         int trial2=0;
         while (trial2<10){
             if (inputAaEe.equals(A)||inputAaEe.equals(a)){ //if input is A or a
-                //int trial2=0; //starts counter at 0
-                //while (trial2<10){ //user stays in this loop until 10 critical hits are obtained
                     int randomNumber =(int)(Math.random()*2);//generates either a zero or one and stores it as randomNumber
                     if (randomNumber==0){ //if a zero was generated,
                         System.out.println("Critical miss!"); // user is notified of a critical miss
@@ -106,8 +104,6 @@ public class HW8{ //creates class
                 } //ends if statement
             
             else if (inputAaEe.equals(E)||inputAaEe.equals(e)){ //if input is A or a
-            //int controlEe=0;//controls for the "Ee" step
-            //while (controlEe<1){ //runs until 10 is the random number generated at the "Ee" step
                 int randomNumber2=(int)(Math.random()*10)+1;  //generates a random number between 1 and 10
                 if (randomNumber2<10){ //if 10 was not generated,
                     System.out.println("Did not escape!"); // user is notified that they didn't escape
@@ -119,7 +115,6 @@ public class HW8{ //creates class
                     //controlEe++; //increments control counter and exits controlling while loop
                     break;
                 } //ends else if statement for 10 value
-            //}//ends while statement
             } //ends if statement statement for E or e entry
             
             else {
